@@ -15,9 +15,18 @@
 					<!-- Este es un botón que utiliza JavaScript SDK para presentar un botón de inicio de sesión gráfico 
 					que activa la función FB.login() cuando se hace clic.-->
 				
+
+
+					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+						<!-- Este es el boton básico de login -->
+					</fb:login-button>
+
+
 					<div id="status">
 						<!--Acá es donde se escriben los estados dados por el SDK -->
-					</div> 
+					</div>
+
+
 			</div>
 		</div>
 	</header>
@@ -84,7 +93,7 @@
 	  	var js, fjs = d.getElementsByTagName(s)[0];
 	  	if (d.getElementById(id)) return;
 	  	js = d.createElement(s); js.id = id;
-	  	js.src = "//connect.facebook.net/en_US/sdk.js";
+	  	js.src = "//connect.facebook.net/es_LA/sdk.js"; //con esto se cambia el idioma
 	  	fjs.parentNode.insertBefore(js, fjs);
 	  }(document, 'script', 'facebook-jssdk'));
 
