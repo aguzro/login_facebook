@@ -4,20 +4,23 @@
 	<meta charset="UTF-8">
 	<title>Login con Facebook</title>
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-	 <style>
-	 	.center {
-	 		margin: 0 auto;
-	 	}
-	 </style>
 </head>
 <body>
-	<h1>Bienvenido</h1>
-
-	<div class="fb-login-button center" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
-		<!-- Este es un botón que utiliza JavaScript SDK para presentar un botón de inicio de sesión gráfico 
-		que activa la función FB.login() cuando se hace clic.-->
-
-	<div id="status"></div> <!--Acá es donde se escriben los estados dados por el SDK -->
+	<header class="container">
+		<div class="row">
+			<div class="col s12">
+				<h1>Bienvenido</h1>
+				
+					<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+					<!-- Este es un botón que utiliza JavaScript SDK para presentar un botón de inicio de sesión gráfico 
+					que activa la función FB.login() cuando se hace clic.-->
+				
+					<div id="status">
+						<!--Acá es donde se escriben los estados dados por el SDK -->
+					</div> 
+			</div>
+		</div>
+	</header>
 
 	<script>
 	  // Esto es llamado con los resultados de FB.getLoginStatus().
