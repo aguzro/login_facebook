@@ -11,8 +11,8 @@
 	  the FB.login() function when clicked.
 	-->
 	<h1>Bienvenido</h1>
-	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-	</fb:login-button>
+	
+	<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 
 	<div id="status"></div>
 
@@ -50,16 +50,15 @@
 	  window.fbAsyncInit = function() {
 	  	FB.init({
 	  		appId      : '356790234702810', //ID de la app de Facebook
-	    cookie     : true,  // enable cookies to allow the server to access 
-	                        // the session
-	    xfbml      : true,  // parse social plugins on this page
-	    version    : 'v2.8' // use graph api version 2.8
+	    cookie     : true,  // habilita las cookies para permitir que el servidor acceda a la sesión
+	    xfbml      : true,  // analiza los complementos sociales de esta página
+	    version    : 'v2.8' // usa graph api version 2.8
 	});
 
 	 // Ahora que hemos inicializado el SDK de JavaScript, llamamos
-	// FB.getLoginStatus (). Esta función obtiene el estado del
+	// FB.getLoginStatus (). Esta función obtiene el estado de la
 	// persona que visita esta página y puede devolver uno de los tres estados a
-	// la devolución de llamada que usted proporciona. Ellos pueden ser:
+	// la devolución de llamada que proporcionamos. Estos pueden ser:
 	//
 	// 1. Iniciar sesión en tu aplicación ('conectado')
 	// 2. Conectado a Facebook, pero no a tu aplicación ('not_authorized')
@@ -74,7 +73,7 @@
 
 	};
 
-	  // Load the SDK asynchronously
+	  // Carga el SDK de forma asíncrona
 	  (function(d, s, id) {
 	  	var js, fjs = d.getElementsByTagName(s)[0];
 	  	if (d.getElementById(id)) return;
