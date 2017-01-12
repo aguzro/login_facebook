@@ -11,16 +11,21 @@
 			<div class="col s12">
 				<h1>Bienvenido</h1>
 				
-
+					<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 					<!-- Este es un botón que utiliza JavaScript SDK para presentar un botón de inicio de sesión gráfico 
 					que activa la función FB.login() cuando se hace clic.-->
+				
+
+
 					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
 						<!-- Este es el boton básico de login -->
 					</fb:login-button>
 
+
 					<div id="status">
 						<!--Acá es donde se escriben los estados dados por el SDK -->
 					</div>
+
 
 			</div>
 		</div>
@@ -48,14 +53,14 @@
 	  }
 	}
 
-	
+	  // This function is called when someone finishes with the Login
+	  // Button.  See the onlogin handler attached to it in the sample
+	  // code below.
 	  function checkLoginState() {
 	  	FB.getLoginStatus(function(response) {
 	  		statusChangeCallback(response);
 	  	});
 	  }
-
-
 
 	  window.fbAsyncInit = function() {
 	  	FB.init({
@@ -88,7 +93,7 @@
 	  	var js, fjs = d.getElementsByTagName(s)[0];
 	  	if (d.getElementById(id)) return;
 	  	js = d.createElement(s); js.id = id;
-	  	js.src = "//connect.facebook.net/es_LA/sdk.js"; //con esto se cambia el idioma
+	  	js.src = "//connect.facebook.net/es_LA/sdk.js"; //con esto se cambia
 	  	fjs.parentNode.insertBefore(js, fjs);
 	  }(document, 'script', 'facebook-jssdk'));
 
