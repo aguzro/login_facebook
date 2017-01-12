@@ -16,10 +16,9 @@
 					que activa la función FB.login() cuando se hace clic.-->
 				
 
-
-					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-						<!-- Este es el boton básico de login -->
-					</fb:login-button>
+					<!-- Este es el boton básico de login 
+					<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">	
+					</fb:login-button> -->
 
 
 					<div id="status">
@@ -93,7 +92,7 @@
 	  	var js, fjs = d.getElementsByTagName(s)[0];
 	  	if (d.getElementById(id)) return;
 	  	js = d.createElement(s); js.id = id;
-	  	js.src = "//connect.facebook.net/es_LA/sdk.js"; //con esto se cambia
+	  	js.src = "//connect.facebook.net/es_LA/sdk.js"; //con esto se cambia el idioma
 	  	fjs.parentNode.insertBefore(js, fjs);
 	  }(document, 'script', 'facebook-jssdk'));
 
