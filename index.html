@@ -4,11 +4,16 @@
 	<meta charset="UTF-8">
 	<title>Login con Facebook</title>
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+	 <style>
+	 	.center {
+	 		margin: 0 auto;
+	 	}
+	 </style>
 </head>
 <body>
-	<h1>Bienvenido</h1>
+	<h1 class="center-align">Bienvenido</h1>
 
-	<div class="fb-login-button center-align" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+	<div class="fb-login-button center" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 		<!-- Este es un botón que utiliza JavaScript SDK para presentar un botón de inicio de sesión gráfico 
 		que activa la función FB.login() cuando se hace clic.-->
 
@@ -26,12 +31,12 @@
 	      testAPI();
 	  } else if (response.status === 'not_authorized') {
 	      // La persona esta loggeada en Facebook, pero no en la app.
-	      document.getElementById('status').innerHTML = '<p>Por favor, inicia sesión ' +
+	      document.getElementById('status').innerHTML = '<p class="center-align">Por favor, inicia sesión ' +
 	      'en LaboratoriaApp.</p>';
 	  } else {
 	      // La persona no ha iniciado sesión en Facebook, por lo que no estamos seguros de si
 		  // están conectados a esta aplicación o no.
-	      document.getElementById('status').innerHTML = '<p class"indigo-text">Por favor, inicia sesión ' +
+	      document.getElementById('status').innerHTML = '<p class="center-align">Por favor, inicia sesión ' +
 	      'en Facebook.</p>';
 	  }
 	}
