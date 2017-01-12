@@ -3,18 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Login con Facebook</title>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
 </head>
 <body>
-	<!--
-	  Below we include the Login Button social plugin. This button uses
-	  the JavaScript SDK to present a graphical Login button that triggers
-	  the FB.login() function when clicked.
-	-->
 	<h1>Bienvenido</h1>
-	
-	<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 
-	<div id="status"></div>
+	<div class="fb-login-button center-align" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+		<!-- Este es un botón que utiliza JavaScript SDK para presentar un botón de inicio de sesión gráfico 
+		que activa la función FB.login() cuando se hace clic.-->
+
+	<div id="status"></div> <!--Acá es donde se escriben los estados dados por el SDK -->
 
 	<script>
 	  // Esto es llamado con los resultados de FB.getLoginStatus().
@@ -28,13 +26,13 @@
 	      testAPI();
 	  } else if (response.status === 'not_authorized') {
 	      // La persona esta loggeada en Facebook, pero no en la app.
-	      document.getElementById('status').innerHTML = 'Por favor, inicia sesión ' +
-	      'en LaboratoriaApp.';
+	      document.getElementById('status').innerHTML = '<p>Por favor, inicia sesión ' +
+	      'en LaboratoriaApp.</p>';
 	  } else {
 	      // La persona no ha iniciado sesión en Facebook, por lo que no estamos seguros de si
 		  // están conectados a esta aplicación o no.
-	      document.getElementById('status').innerHTML = 'Por favor, inicia sesión ' +
-	      'en Facebook.';
+	      document.getElementById('status').innerHTML = '<p class"indigo-text">Por favor, inicia sesión ' +
+	      'en Facebook.</p>';
 	  }
 	}
 
@@ -50,9 +48,9 @@
 	  window.fbAsyncInit = function() {
 	  	FB.init({
 	  		appId      : '356790234702810', //ID de la app de Facebook
-	    cookie     : true,  // habilita las cookies para permitir que el servidor acceda a la sesión
-	    xfbml      : true,  // analiza los complementos sociales de esta página
-	    version    : 'v2.8' // usa graph api version 2.8
+	    	cookie     : true,  // habilita las cookies para permitir que el servidor acceda a la sesión
+	    	xfbml      : true,  // analiza los complementos sociales de esta página
+	    	version    : 'v2.8' // usa graph api version 2.8
 	});
 
 	 // Ahora que hemos inicializado el SDK de JavaScript, llamamos
@@ -82,14 +80,14 @@
 	  	fjs.parentNode.insertBefore(js, fjs);
 	  }(document, 'script', 'facebook-jssdk'));
 
-	  // Here we run a very simple test of the Graph API after login is
-	  // successful.  See statusChangeCallback() for when this call is made.
+	  // Aquí ejecutamos una prueba muy simple de la API Graph después de iniciar sesión con
+	  // éxito. Consulta statusChangeCallback() para cuando se realice esta llamada.
 	  function testAPI() {
 	  	console.log('Welcome!  Fetching your information.... ');
 	  	FB.api('/me', function(response) {
 	  		console.log('Successful login for: ' + response.name);
 	  		document.getElementById('status').innerHTML =
-	  		'Gracias por iniciar sesión, ' + response.name + '!';
+	  		'<p class="blue-text">Gracias por iniciar sesión, ' + response.name + '!</p>';
 	  	});
 	  }
 	</script>
