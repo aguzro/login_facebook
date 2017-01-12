@@ -31,12 +31,12 @@
 	      testAPI();
 	  } else if (response.status === 'not_authorized') {
 	      // La persona esta loggeada en Facebook, pero no en la app.
-	      document.getElementById('status').innerHTML = '<p class="center-align">Por favor, inicia sesión ' +
+	      document.getElementById('status').innerHTML = '<p class="center-align red-text">Por favor, inicia sesión ' +
 	      'en LaboratoriaApp.</p>';
 	  } else {
 	      // La persona no ha iniciado sesión en Facebook, por lo que no estamos seguros de si
 		  // están conectados a esta aplicación o no.
-	      document.getElementById('status').innerHTML = '<p class="center-align">Por favor, inicia sesión ' +
+	      document.getElementById('status').innerHTML = '<p class="center-align teal-text">Por favor, inicia sesión ' +
 	      'en Facebook.</p>';
 	  }
 	}
@@ -92,7 +92,7 @@
 	  	FB.api('/me', function(response) {
 	  		console.log('Successful login for: ' + response.name);
 	  		document.getElementById('status').innerHTML =
-	  		'<p class="blue-text">Gracias por iniciar sesión, ' + response.name + '!</p>';
+	  		'<p class="blue-text center-align">Gracias por iniciar sesión, ' + response.name + '!</p>';
 	  	});
 	  }
 	</script>
